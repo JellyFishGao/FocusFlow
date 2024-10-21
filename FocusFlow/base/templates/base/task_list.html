@@ -18,13 +18,15 @@
 
 </div>
 
+<div id="search-add-wrapper">
+    <form method="GET" style="margin-top: 20px; display: flex;">
+        <input type='text' name='search-area'>
+        <input class="button" type="submit" value='Search'>
+    </form>
+    <a id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
+</div>
 
-<!-- <a href="{% url 'task-create' %}">Add Task</a>
 
-<form method="GET">
-    <input type='text' name='search-area'>
-    <input type="submit" value='Search'>
-</form> -->
 
 
 <div class="task-items-wrapper">
@@ -49,22 +51,6 @@
     {% endfor %}
 </div>
 
-
-<table>
-    <tr>
-        <th>Item</th>
-        <th></th>
-    </tr>
-    {% for task in tasks %}
-    <tr>
-        <td>{{task.title}}</td>
-        <td><a href="{% url 'task-update' task.id %}">Edit</a></td>
-        <td><a href="{% url 'task-delete' task.id %}">Delete</a></td>
-    </tr>
-    {% empty %}
-    <h3>No Items in List</h3>
-    {% endfor %}
-</table>
 
 {% endblock content %}
 
